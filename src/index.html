@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connect UI and API</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="jquery.js"></script>
+    <script src="util.js"></script>
+    <script src="request-hook.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div id="container" class="main">
+        <h3>Run API and get the result.</h3>
+        <a href="http://localhost:3001/items">Get ALL items</a><br />
+        <a href="http://localhost:3001/items/6">Get an item "6"</a><br />
+
+        <hr />
+        <span id="api-result-body"></span>
+    </div>
+    <script>
+        $(function () {
+            app.init($('#container'));
+        });
+    </script>
+
+</body>
+</html>
