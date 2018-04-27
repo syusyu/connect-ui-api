@@ -6,11 +6,13 @@ var app = (function () {
                 event.preventDefault();
                 var url = $(el).attr('href');
                 var method = getMethod(url);
+                var body = method === 'POST' ? {"name": "Hook test!!!"} : null;
 
                 $.ajax({
                     url: url,
                     method: method,
                     cache: false,
+                    data: body,
                     success: function (response) {
                         $('#api-result-body').text(JSON.stringify(response.body));
                     }
